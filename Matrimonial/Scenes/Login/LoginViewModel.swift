@@ -48,6 +48,7 @@ class LoginViewModel: ObservableObject {
                 self.isLoggedIn = status
             } catch LoginService.LoginError.invalidCredentials {
                 self.isLoggedIn = false
+                self.isLoading = false
                 self.loginError = "Invalid email or password"
             } catch {
                 print(error)
